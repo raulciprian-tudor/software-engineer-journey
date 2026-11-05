@@ -1,2 +1,6 @@
 [MESSAGES CONTROL]
 disable=missing-module-docstring
+
+[BASIC]
+module-naming-style=any
+const-naming-style=any

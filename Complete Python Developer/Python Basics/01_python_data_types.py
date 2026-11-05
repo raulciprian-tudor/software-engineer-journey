@@ -1,6 +1,7 @@
 # Fundamental Data Types
 int
 float
+# complex
 bool
 str
 list
