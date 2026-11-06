@@ -14,5 +14,8 @@ print("Type:", A * B, type(A * B))
 print("Type:", A / B, type(A / B))
 
 # Mathematical Functions
-print(round(3.9))
-print(abs(-20))
+print(round(3.9))  # rounds number
+print(abs(-20))  # turns negative number into positive (absolute)
+print(pow(2, 6))  # raises 2 to the power of 6
+print(min([10, 11, 91, 1, 32]))  # iterable, find the smallest value in an iterable
+print(max([10, 11, 91, 1, 32]))  # iterable, find the biggest value in an iterable

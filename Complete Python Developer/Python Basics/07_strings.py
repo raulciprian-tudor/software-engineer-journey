@@ -6,7 +6,7 @@ WOW
 ___
 """
 
-first_name = "Ciprian"
+first_name = "Ciprian "
 last_name = "Tudor"
 full_name = first_name + last_name  # concatenation
 print(full_name)
