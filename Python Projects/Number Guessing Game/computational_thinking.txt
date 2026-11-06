@@ -1,0 +1,54 @@
+Step 1: a card is shown. 12. User guesses higher or lower. Second card gets shown. If user guessed correct, user wins and gets a point. If user didn't guess right, he loses the game.
+
+Step 2: inputs / outputs
+    - inputs -> user's guess
+    - outputs -> new card, user score
+    - state -> card deck, user score
+
+Step 3: chunk into big pieces
+    1. card1 gets shown
+    2. user guesses higher or lower
+    3. card2 gets shown
+    4. cards get compared
+    5. if guessed -> user wins, 1 point gained
+    6. card2 becomes card1
+    7. user guesses 
+    8. new card gets shown
+    9. cards get compared
+    10. if user did not guess -> user loses
+
+Step 4: edge cases
+    - ace = 1
+    - tie = win
+    - deck finishes = mix deck and start over
+
+PSEUDOCODE
+Start Game:
+    deck = 52 cards
+    score = 0
+    lost = false
+
+    while lost is false:
+        while deck_card >= 0:
+            show card1
+            remove card1 from deck
+            ask user for guess
+            show card2
+            remove card2 from deck
+
+            if card1 < card2 and guess == higher:
+                score += 1
+                card1 = card2
+            elif card1 > card2 and guess == higher:
+                print "You lost. Score: {score}"
+                exit game
+            elif card1 < card2 and guess == lower:
+                print "You lost. Score: {score}"
+                exit game
+            elif card card1 > card2 and guess == lower:
+                score += 1
+                card1 = card2
+            else:
+                score += 1
+                card1 = card2
+                
