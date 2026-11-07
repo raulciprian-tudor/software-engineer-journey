@@ -15,17 +15,25 @@ def start_game():
     hidden_secret = hide_secret(secret)
 
     while life >= 0:
-        print(f"{hidden_secret=}")
         guess = input("Guess: ")
 
         if game_round == 0:
             print(f"Secret word: {hidden_secret}")
+
+        if guess in hidden_secret:
+            life -= 1
+            print(life)
 
         if check_if_in_word(guess, secret):
             hidden_secret = update_secret(hidden_secret, secret, guess)
             print(f"Word: {hidden_secret}")
         else:
             life -= 1
+
+        if secret == hidden_secret:
+            print("You won!")
+            print(f"secret: {secret}")
+            break
 
         if life == 0:
             print("You lost!")
@@ -44,15 +52,12 @@ def check_if_in_word(letter, secret):
 
 def update_secret(hidden_secret, secret, letter):
     """If letter guessed exists in letter, update the secret to show the letter"""
-    # chars = list(hidden_secret)
-    # for char in secret:
-    #     if char == letter:
-    #         chars[secret.index(char)] = letter
-    # updated_secret = "".join(chars)
-    # return updated_secret
+    chars = list(hidden_secret)
     for i, ch in enumerate(secret):
-        print(i, ch)
-    return "demo"
+        if ch == letter:
+            chars[i] = letter
+    updated_secret = "".join(chars)
+    return updated_secret
 
 
 def secret_word():
